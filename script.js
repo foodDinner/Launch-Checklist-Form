@@ -4,16 +4,17 @@ window.addEventListener("load",function() {
    fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response) {
       response.json().then(function(json) {
          const missionData = document.getElementById("missionTarget");
+         let i = Math.floor(Math.random()*6);
          missionData.innerHTML =`
             <h2>Mission Destination</h2>
             <ol>
-            <li>Name: ${json[0].name}</li>
-            <li>Diameter: ${json[0].diameter}</li>
-            <li>Star: ${json[0].star}</li>
-            <li>Distance from Earth: ${json[0].distance}</li>
-            <li>Number of Moon: ${json[0].moons}</li>
+            <li>Name: ${json[i].name}</li>
+            <li>Diameter: ${json[i].diameter}</li>
+            <li>Star: ${json[i].star}</li>
+            <li>Distance from Earth: ${json[i].distance}</li>
+            <li>Number of Moon: ${json[i].moons}</li>
             </ol>
-            <img src="${json[0].image}"></img>
+            <img src="${json[i].image}">
         `;
       })
    })
