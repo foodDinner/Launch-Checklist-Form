@@ -31,11 +31,11 @@ window.addEventListener("load", function() {
     let checkOne;
     let checkTwo;
 
-    if (pilotInput == "") {
-      alert("Pilot name cannot be blank");
+    if (pilotInput == "" || !isNaN(pilotInput)) {
+      alert("Invalid pilot entry");
       event.preventDefault();
-    } else if (copilotInput == "") {
-      alert("Copilot name cannot be blank");
+    } else if (copilotInput == "" || !isNaN(copilotInput)) {
+      alert("Invalid copilot entry");
       event.preventDefault();
     } else if (isNaN(fuelInput) || fuelInput == "") {
       alert("Fuel must be a number");
